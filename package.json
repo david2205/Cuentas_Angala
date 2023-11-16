@@ -1,0 +1,25 @@
+{
+  "name": "cuentas_angala",
+  "version": "1.0.0",
+  "description": "Gestion venta cuentas de streaming",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david2205/Cuentas_Angala.git"
+  },
+  "author": "Harold Herrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david2205/Cuentas_Angala/issues"
+  },
+  "homepage": "https://github.com/david2205/Cuentas_Angala#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
