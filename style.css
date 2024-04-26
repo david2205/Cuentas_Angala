@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,300;0,700;1,400&display=swap');
-/* 
-font-family:'Oswald', sans-serif;
-font-family:'Poppins', sans-serif;
-*/
+
+html {
+    scroll-behavior: smooth;
+}
 
 *{
     margin:0;
@@ -99,7 +99,7 @@ img{
     backdrop-filter: blur(10px);
     top: 100%;
     z-index: 1;
-    background-color: #4e4b5076;
+    background-color: #C39BD3;
     padding: 20px;
     min-width: 400px;
 }
@@ -109,7 +109,7 @@ table{
 }
 
 th, td{
-    color: #ffffff;
+    color: #4A235A;
 }
 
 .borrar{
@@ -117,10 +117,12 @@ th, td{
     border-radius: 50%;
     padding: 5px 10px;
     text-decoration: none;
-    color: #ffffff;
+    color: #fdfdfd;
     font-weight: 800;
     cursor:pointer;
 }
+
+
 
 .header-content{
     display: flex;
@@ -150,33 +152,49 @@ th, td{
     font-size: 90px;
     text-transform: uppercase;
     line-height: 1;
-    color: #111111;
+    background: linear-gradient(to right, #87CEEB, #8A2BE2, #FF6666); /* Azul cielo, Morado, Rojo claro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: 'Oswald', sans-serif;
     margin-bottom: 15px;
 }
 
 .header-txt p{
     font-size: 20px;
+    color: #700895;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-.btn-1{
+.btn-1 {
     display: inline-block;
     padding: 11px 25px;
-    background-color: #111111;
+    background-color: #6C1665;
     color: #ffffff;
     border-radius: 5px;
+    transition: background-color 0.5s; /* Ajustamos la duración de la transición a 0.5 segundos */
 }
 
-.btn-2{
+.btn-1:hover {
+    background-color: #561350;
+}
+
+
+
+.btn-2 {
     display: inline-block;
     padding: 7px 10px;
-    background-color: #111111;
+    background-color: #8E44AD;
     color: #ffffff;
     border-radius: 5px;
     font-size: 15px;
+    transition: transform 0.3s; /* Agregamos una transición para suavizar el cambio de tamaño */
 }
+
+.btn-2:hover {
+    transform: scale(0.9); /* Reducimos el tamaño del botón al 90% cuando el puntero se coloca encima */
+}
+
 
 .product{
     padding: 50px 0;
@@ -184,7 +202,9 @@ th, td{
 }
 
 .product h2{
-    color: #111111;
+    background: linear-gradient(to right, #87CEEB, #8A2BE2, #FF6666); /* Azul cielo, Morado, Rojo claro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: 'Oswald', sans-serif;
     font-size: 50px;
     text-transform: uppercase;
@@ -203,15 +223,23 @@ th, td{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.product img{
+.product img {
     width: 300px;
     height: 180px;
     margin-bottom: 20px;
+    transition: transform 0.3s; /* Agregamos una transición para suavizar el cambio de tamaño */
 }
+
+.product img:hover {
+    transform: scale(1.2); /* Aumentamos el tamaño de la imagen al 110% cuando el puntero se coloca encima */
+}
+
 
 .product h3{
     font-size: 20px;
-    color: #111111;
+    background: linear-gradient(to right, #87CEEB, #8A2BE2, #FF6666); /* Azul cielo, Morado, Rojo claro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -219,7 +247,7 @@ th, td{
 
 .product p, .precio{
     font-size: 16px;
-    color: #111111;
+    color: #5B0059;
     margin-bottom: 15px;
 }
 
@@ -229,7 +257,7 @@ th, td{
 
 /* Estiliza el footer */
 footer {
-    background-color: #a756e6; 
+    background: linear-gradient(to right, #87CEEB, #8A2BE2); /* Aplicamos un degradado de color de azul cielo a rojo claro */
     padding: 20px 0;
 }
 
@@ -245,6 +273,7 @@ footer {
     text-align: center; 
 }
 
+
 @media (max-width:991px){
     .menu{
         padding: 20px;
@@ -257,16 +286,17 @@ footer {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #181818;
+        background-color: #7a2a99;
         display: none;
     }
 
     .menu .navbar ul li{
         width: 100%;
+        color: #111111;
     }
 
     .menu .navbar ul li a{
-        color: #ffffff;
+        color: #111111;
     }
 
     #menu:checked ~ .navbar{
@@ -281,27 +311,34 @@ footer {
         min-width: 100%;
     }
 
-    .header{
+    .header {
         min-height: 0vh;
+        display: flex;
+        flex-direction: column; /* Ajusta la dirección del flexbox a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
     }
-
-    .header-content{
+    
+    .header-img {
+        display: block;
+        margin-bottom: 80px; /* Ajusta el margen inferior de la imagen */
+    }
+    
+    .header-content {
         padding: 50px 0;
-        flex-direction: column;
+        display: flex;
+        flex-direction: column; /* Ajusta la dirección del flexbox a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
     }
-
-    .header-img{
-        display: contents;
-    }
-
-    .header-txt{
+    
+    .header-txt {
         flex-basis: 100%;
         text-align: center;
     }
-
-    .header-txt h1{
+    
+    .header-txt h1 {
         font-size: 70px;
     }
+    
 
     .product{
         padding: 0 30px 30px 30px;
@@ -317,7 +354,7 @@ footer {
 
     .product img{
         width: 200px;
-        height: 150px;
+        height: 110px;
     }
 
 
