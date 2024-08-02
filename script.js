@@ -19,22 +19,20 @@ function hacerCompra(e) {
 
     // Obtener todos los elementos dentro de la lista del carrito
     const elementosCarrito = lista.querySelectorAll('tr');
-    let mensaje = "Hola angala quiero plataformas de: ";
+    let mensaje = "Hola angala, me interesan estas plataformas:\n\n";
 
     // Iterar sobre cada elemento del carrito
-    elementosCarrito.forEach(elemento => {
+    elementosCarrito.forEach((elemento, index) => {
         // Obtener el título del elemento actual
         const titulo = elemento.querySelector('td:nth-child(2)').textContent;
-        mensaje += titulo + ", ";
+        // Agregar la plataforma al mensaje con su número de orden y un salto de línea
+        mensaje += `${index + 1}. ${titulo}\n`;
     });
-
-    // Eliminar la última coma y espacio extra
-    mensaje = mensaje.slice(0, -2);
 
     // Número de teléfono de WhatsApp
     const numero = "+573054289013";
 
-    // Generar el enlace web de WhatsApp
+    // Generar el enlace web de WhatsApp con el mensaje formateado
     const linkWhatsapp = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
 
     // Abrir el enlace en una nueva pestaña
@@ -43,6 +41,7 @@ function hacerCompra(e) {
     // Limpiar todos los datos del carrito después de la compra
     limpiarCarrito();
 }
+
 
 function limpiarCarrito() {
     // Obtener todos los elementos dentro de la lista del carrito

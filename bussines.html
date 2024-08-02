@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="bootstrap-4.0.0\dist\css\bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angala</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <!-- Agrega esta línea para definir el icono de la pestaña -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <header class="header">
+
+        <div class="menu container">
+            <a href="#" class="logo">ANGALA</a>
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="menu">
+            </label>
+
+            <nav class="navbar">
+                <ul>
+                    <li><a href=index.html>Inicio</a></li>
+                    <li><a href="index.html">Productos</a></li>
+                    <li><a href="index.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div class="header-content container">
+        <div class="header-img">
+            <img src="img/logo.png" alt="">
+        </div>
+        <div>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <h2>Registrar Nueva Venta</h2>
+
+        <form id="whatsappForm">
+            <!-- Tres opciones de selección -->
+            <div class="form-group">
+                <label for="opcion">Plataforma</label>
+                <select class="form-control" id="opcion" required>
+                    <option value="">Seleccione...</option>
+                    <option value="Netflix">Netflix</option>
+                    <option value="Amazon">Amazon</option>
+                    <option value="Disney">Disney</option>
+                    <option value="Max">Max</option>
+                </select>
+            </div>
+
+            <!-- Número de WhatsApp -->
+            <div class="form-group">
+                <label for="whatsapp">Número de WhatsApp</label>
+                <input type="tel" class="form-control" id="whatsapp" placeholder="3124667509" required>
+            </div>
+
+            <!-- Fecha de inicio -->
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de Inicio</label>
+                <input type="date" class="form-control" id="fechaInicio" required>
+            </div>
+
+            <!-- Fecha de Corte -->
+            <div class="form-group">
+                <label for="fechaCorte">Fecha de Corte</label>
+                <input type="date" class="form-control" id="fechaCorte" required>
+            </div>
+
+            <!-- Correo electrónico -->
+            <div class="form-group">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" class="form-control" id="correo" placeholder="netflix@ejemplo.com" required>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="form-group">
+                <label for="contrasena">Contraseña</label>
+                <input type="text" class="form-control" id="contrasena" placeholder="Contraseña del correo" required>
+            </div>
+
+            <!-- PANTALLA -->
+            <div class="form-group">
+                <label for="pin">Pantalla</label>
+                <input type="number" class="form-control" id="pantalla" placeholder="Numero de Pantalla" required>
+            </div>
+
+            <!-- PIN -->
+            <div class="form-group">
+                <label for="pin">PIN</label>
+                <input type="number" class="form-control" id="pin" placeholder="1234" required>
+            </div>
+
+            <!-- Botón de enviar -->
+            <button type="submit" class="btn btn-primary">Registrar Venta</button>
+        </form>
+    </div>
+    <p></p>
+
+
+    <footer>
+        <div class="container" id="social">
+            <div class="row">
+                <div class="col-md-4">
+                    <p></p>
+                </div>
+                <div class="col-md-4">
+
+
+
+                </div>
+                <div class="col-md-4">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita el envío del formulario de la manera tradicional
+
+    var numero = document.getElementById('whatsapp').value.trim();
+    var plataforma = document.getElementById('opcion').value;
+    var fechaInicio = document.getElementById('fechaInicio').value;
+    var fechaCorte = document.getElementById('fechaCorte').value;
+    var correo = document.getElementById('correo').value;
+    var contrasena = document.getElementById('contrasena').value;
+    var pantalla = document.getElementById('pantalla').value;
+    var pin = document.getElementById('pin').value;
+
+    if (numero) {
+        // Quitar caracteres especiales y espacios
+        numero = numero.replace(/\D/g, '');
+
+        var mensaje = '❤\u2764\uFE0F🎥 ' + plataforma + ' 🐼\n' +
+              '💌 CORREO: ' + correo + '\n' +
+              '🔑 CONTRASEÑA: ' + contrasena + '\n' +
+              '👥 PERFIL: ' + pantalla + '\n' +
+              '🥷🏽 PIN: ' + pin + '\n\n' +
+              '☀ FECHA DE INICIO: ' + fechaInicio + '\n' +
+              '🌧 FECHA CORTE: ' + fechaCorte + '\n\n' +
+              '⚠ IMPORTANTE PARA INGRESAR EN SMART TV ⚠\n\n' +
+              '1. INGRESA PRIMERO A LA CUENTA DESDE EL CELULAR\n\n' +
+              '2. BUSCA EL CÓDIGO QUE APARECE EN EL TV CUANDO ABRES NETFLIX\n' +
+              '💥 IMPORTANTE 💥\n\n' +
+              '👉 SOLO usar en un dispositivo a la vez \n' +
+              '👉 NO modificar otros perfiles.\n' +
+              '👉 USUARIO que modifique claves, nombre de pantallas, correos o use más pantallas de las adquiridas se cancelará el servicio sin reembolso.\n\n' +
+              '👉Recuerda que tu pantalla tiene GARANTIA durante todo el servicio. \n' +
+              'Realiza un reclamo paciente y respetuoso por escrito.❤\n\n' +
+              'Es un gusto para nosotros poder atenderte';
+
+mensaje = encodeURIComponent(mensaje);
+
+
+
+        // Generar el enlace de WhatsApp
+        var enlace = 'https://wa.me/' + numero + '?text=' + mensaje;
+
+        // Redirigir al enlace de WhatsApp
+        window.location.href = enlace;
+    } else {
+        alert('Por favor, ingrese un número de WhatsApp válido.');
+    }
+});
+
+    </script>
+
+    <script>
+        // Establecer la fecha de hoy como valor predeterminado
+        window.onload = function () {
+            var fecha = new Date();
+            var dia = String(fecha.getDate()).padStart(2, '0');
+            var mes = String(fecha.getMonth() + 1).padStart(2, '0'); // Los meses empiezan desde 0
+            var anio = fecha.getFullYear();
+            var fechaActual = anio + '-' + mes + '-' + dia;
+            document.getElementById('fechaInicio').value = fechaActual;
+        };
+    </script>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>
