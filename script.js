@@ -19,9 +19,9 @@ function hacerCompra(e) {
 
     // Obtener todos los elementos dentro de la lista del carrito
     const elementosCarrito = lista.querySelectorAll('tr');
-    let mensaje = "---------------------------------------------------------\n";
+    let mensaje = "------------------------------------------\n";
     mensaje += "Hola Angala 🥰, estoy interesado 😁 en estas plataformas:😎\n";
-    mensaje += "---------------------------------------------------------\n";
+    mensaje += "----------------------------------------------\n";
 
     // Iterar sobre cada elemento del carrito
     elementosCarrito.forEach((elemento, index) => {
@@ -31,9 +31,9 @@ function hacerCompra(e) {
         mensaje += `${index + 1}. ${titulo}\n`;
     });
 
-    mensaje += "---------------------------------------------------------\n";
+    mensaje += "---------------------------------------------\n";
     mensaje += "Tienes alguna promoción😱 que me puedas armar🔥\n";
-    mensaje += "----------------------------------------------------------";
+    mensaje += "----------------------------------------------";
 
     // Número de teléfono de WhatsApp
     const numero = "+573054289013";
