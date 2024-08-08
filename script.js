@@ -19,15 +19,21 @@ function hacerCompra(e) {
 
     // Obtener todos los elementos dentro de la lista del carrito
     const elementosCarrito = lista.querySelectorAll('tr');
-    let mensaje = "Hola angala, me interesan estas plataformas:\n\n";
+    let mensaje = "---------------------------------------------------------\n";
+    mensaje += "Hola Angala 🥰, estoy interesado 😁 en estas plataformas:😎\n";
+    mensaje += "---------------------------------------------------------\n";
 
     // Iterar sobre cada elemento del carrito
     elementosCarrito.forEach((elemento, index) => {
-        // Obtener el título del elemento actual
-        const titulo = elemento.querySelector('td:nth-child(2)').textContent;
+        // Obtener el título del elemento actual y eliminar espacios adicionales
+        const titulo = elemento.querySelector('td:nth-child(2)').textContent.trim();
         // Agregar la plataforma al mensaje con su número de orden y un salto de línea
         mensaje += `${index + 1}. ${titulo}\n`;
     });
+
+    mensaje += "---------------------------------------------------------\n";
+    mensaje += "Tienes alguna promoción😱 que me puedas armar🔥\n";
+    mensaje += "----------------------------------------------------------";
 
     // Número de teléfono de WhatsApp
     const numero = "+573054289013";
@@ -41,6 +47,9 @@ function hacerCompra(e) {
     // Limpiar todos los datos del carrito después de la compra
     limpiarCarrito();
 }
+
+
+
 
 
 function limpiarCarrito() {
